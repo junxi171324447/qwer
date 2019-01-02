@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.a{
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			perspective: 600px;
+			perspective-origin: bottom;
+		}
+		.a:hover .b1{
+			transform: translateZ(-200px);
+		}
+		.a:hover .b2{
+			transform: translate3d(0px,-300px,-100px) rotateX(-90deg);
+		}
+		.a:hover .b3{
+			transform: translate3d(300px,0px,-100px) rotateY(-90deg);
+		}
+		.a:hover .b4{
+			transform: translate3d(0px,300px,-100px) rotateX(90deg);
+		}
+		.a:hover .b5{
+			transform: translate3d(-300px,0px,-100px) rotateY(90deg);
+		}
+		.a:hover .b6{
+			transform: translateZ(200px);
+		}
+		@keyframes b{
+			from{
+				transform: /*rotateX(25deg)*/ rotateY(0deg);
+			}
+			to{
+				transform: /*rotateX(25deg)*/ rotateY(360deg);
+			}
+		}
+		.b{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top:50%;
+			left: 50%;
+			margin-top: -100px;
+			margin-left: -100px;
+			transform-style: preserve-3d;
+			animation: b 4s linear infinite;
+
+		}
+		.b1,.b2,.b3,.b4,.b5,.b6 {
+			width: 198px;
+			height: 198px;
+			border:1px solid #000;
+			position: absolute;
+			background-color: rgba(55,22,099,.15);
+
+		}
+		.b1{
+			transform: translateZ(-100px);
+			transition: transform 1s linear;
+		}
+		.b2{
+			transform: translate3d(0px,-200px,-100px) rotateX(-90deg);
+			transition: transform 1s linear;
+			transform-origin: bottom;
+		}
+		.b3{
+			transform: translate3d(200px,0px,-100px) rotateY(-90deg);
+			transition: transform 1s linear;
+			transform-origin: left;
+		}
+		.b4{
+			transform: translate3d(0px,200px,-100px) rotateX(90deg);
+			transition: transform 1s linear;
+			transform-origin: top;
+		}
+		.b5{
+			transform: translate3d(-200px,0px,-100px) rotateY(90deg);
+			transition: transform 1s linear;
+			transform-origin: right;
+		}
+		.b6{
+			transform: translateZ(100px);
+			transition: transform 1s linear;
+		}
+		.c{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top:50%;
+			left: 50%;
+			margin-top: -50px;
+			margin-left: -50px;
+		}
+		.c1{
+			transform: translateZ(-50px);
+			background-color: #E01E92FF;
+		}
+		.c2{
+			transform: translateZ(-50px) translate(0px,-100px) rotateX(-90deg);
+			transform-origin: bottom;
+			background-color: #E53819FF;
+		}
+		.c3{
+			transform: translateZ(-50px) translate(100px,0px) rotateY(-90deg);
+			transform-origin: left;
+			background-color: #00A5FFFF;
+		}
+		.c4{
+			transform: translateZ(-50px) translate(0,100px) rotateX(90deg);
+			transform-origin: top;
+			background-color: #8616E8FF;
+		}
+		.c5{
+			transform: translateZ(-50px) translate(-100px,0) rotateY(90deg);
+			transform-origin: right;
+			background-color: #4CD22CFF;
+		}
+		.c6{
+			transform: translateZ(50px);
+			background-color: #EFDE0FFF;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="a">
+		<div class="b">
+			
+			<div class="c c1"></div>
+			<div class="c c2"></div>
+			<div class="c c3"></div>
+			<div class="c c4"></div>
+			<div class="c c5"></div>
+			<div class="c c6"></div>
+			
+			<div class="b1"></div>
+			<div class="b2"></div>
+			<div class="b3"></div>
+			<div class="b4"></div>
+			<div class="b5"></div>
+			<div class="b6"></div>
+		</div>
+		
+	</div>
+	
+</body>
+</html>
